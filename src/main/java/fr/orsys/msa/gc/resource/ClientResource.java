@@ -2,6 +2,7 @@ package fr.orsys.msa.gc.resource;
 
 import fr.orsys.msa.gc.data.ClientRepository;
 import fr.orsys.msa.gc.model.Client;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,15 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/clients")
 @RequiredArgsConstructor
 @Slf4j
-public class ClientResource {
+public class ClientResource implements IClientResource {
 
     private final ClientRepository clientRepository;
 
-    @GetMapping
-    List<Client> getClients(){
+    public List<Client> getClients(){
 /*        Client client = new Client();
         client.setFirstname("Cyril");
         client.setLastname("Dumont");

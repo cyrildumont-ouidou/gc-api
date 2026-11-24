@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:~/gc-database;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    url: jdbc:h2:~/gc-database;MODE=PostgreSQL
   h2:
     console:
       enabled: true
